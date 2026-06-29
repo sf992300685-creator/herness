@@ -1,0 +1,24 @@
+---
+description: herness 项目的驾驭工程工作规则（始终应用）
+globs: "**/*"
+alwaysApply: true
+---
+
+# herness 驾驭工程规则（始终生效）
+
+本项目用「驾驭工程（Harness Engineering）」方式开发：人类掌舵，智能体执行。
+核心公式 `Agent = Model + Harness`——修环境，不换模型。
+
+## 始终遵守
+
+- 开工先读 `PROGRESS.md` 和目标目录的 `AGENTS.md`。
+- 约束报错时**改代码迁就约束**，绝不放宽约束；要放宽先记 `docs/harness/failure-log.md`。
+- 后端 `logic/` 层**零 IO**（不 import services/api/core，不网络/DB），由 import-linter 强制。
+- 前端 `components/` 不依赖 `services/store/pages`，由 dependency-cruiser 强制。
+- 小步提交，测试先行；改公共接口同步改 `docs/project-map.md`。
+- 不提交密钥；配置走环境变量 + `backend/app/core/config.py`。
+- 每次犯错：在 `docs/harness/failure-log.md` 记「现象 / 根因 / 永久约束」并落到机械约束。
+- 自治长跑：取 `docs/sprint-backlog.md` 第一个可取 sprint，跑 `scripts/verify.sh` 自修，commit 后更新 `PROGRESS.md`；详见 `docs/harness/driver-prompt.md`。
+- ⛔ sprint（实盘/风控关键/图表库等）禁止自动取用，等人类放行。
+
+详见根 `AGENTS.md`。

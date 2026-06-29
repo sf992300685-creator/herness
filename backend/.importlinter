@@ -1,0 +1,14 @@
+[importlinter]
+root_packages =
+    app
+
+[importlinter:contract:backend-layering]
+name = backend layering: api -> services -> core -> validators -> logic -> models
+type = layers
+layers =
+    app.api
+    app.services
+    app.core
+    app.validators
+    app.logic
+    app.models

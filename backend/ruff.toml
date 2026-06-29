@@ -1,0 +1,20 @@
+target-version = "py312"
+line-length = 100
+
+[lint]
+select = [
+    "E", "F", "W",
+    "I",
+    "B",
+    "UP",
+    "C4",
+    "SIM",
+    "RUF",
+]
+ignore = ["E501", "RUF001", "RUF002", "RUF003"]
+
+[lint.isort]
+known-first-party = ["app"]
+
+[format]
+quote-style = "double"
